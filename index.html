@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transparent Image search</title>
+  </head>
+  <body>
+    <input type="text" name="query" id="query" autofocus />
+    <button id="search-btn">search</button>
+    <script>
+      document.getElementById("search-btn").onclick = () => {
+        let value = document.getElementById("query").value;
+        // check if the value is not empty
+        if (value !== "") {
+          // redirect to the search page
+          window.location.href = `https://www.google.com/search?q=${value}&tbm=isch&tbs=ic:trans`;
+        }
+      };
+
+      window.addEventListener("keypress", (e) => {
+        // check if key is enter
+        if (e.key === "Enter") {
+          // get the value of the input
+          let value = document.getElementById("query").value;
+          // check if the value is not empty
+          if (value !== "") {
+            // redirect to the search page
+            window.location.href = `https://www.google.com/search?q=${value}&tbm=isch&tbs=ic:trans`;
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
